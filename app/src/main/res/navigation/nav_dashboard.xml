@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_post_login"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.mvvm.easework.ui.home.HomeFragment"
+        android:label="tab1_fragment"
+        tools:layout="@layout/home_fragment" >
+    </fragment>
+    <fragment
+        android:id="@+id/employeeFragment"
+        android:name="com.mvvm.easework.ui.employee.EmployeeFragment"
+        android:label="employeeFragment"
+        tools:layout="@layout/employee_fragment">
+    <argument
+        android:name="category"
+        app:argType="string" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/requestFragment"
+        android:name="com.mvvm.easework.ui.request.RequestFragment"
+        android:label="request_fragment"
+        tools:layout="@layout/request_fragment" >
+
+    </fragment>
+    <fragment
+        android:id="@+id/tab4Fragment"
+        android:name="com.mvvm.easework.ui.tab_4.Tab4Fragment"
+        android:label="tab4_fragment"
+        tools:layout="@layout/tab4_fragment" />
+    <fragment
+        android:id="@+id/tab5Fragment"
+        android:name="com.mvvm.easework.ui.tab_5.Tab5Fragment"
+        android:label="tab5_fragment"
+        tools:layout="@layout/tab5_fragment" />
+    <action
+        android:id="@+id/action_global_employeeFragment"
+        app:destination="@id/employeeFragment" />
+    <action
+        android:id="@+id/action_global_requestFragment"
+        app:destination="@id/requestFragment" />
+</navigation>

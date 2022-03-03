@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.mvvm.easework.ui.home.HomeViewModel" />
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            tools:context=".ui.home.HomeFragment">
+
+            <ImageView
+                android:id="@+id/img"
+                android:layout_width="match_parent"
+                android:layout_height="240dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:scaleType="center"
+                android:adjustViewBounds="true"
+                android:background="@drawable/banner" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/searchview_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/img"
+                android:layout_gravity="center"
+                android:layout_margin="16dp"
+                android:background="@drawable/custom_search_bar"
+                app:cardCornerRadius="20dp"
+                app:cardUseCompatPadding="true">
+
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="12dp"
+                    android:drawableStart="@drawable/ic_baseline_search_24"
+                    android:drawablePadding="8dp"
+                    android:background="@android:color/transparent"
+                    android:lastBaselineToBottomHeight="0dp"
+                    android:hint="@string/what_re_you_looking_for"
+                    android:textColor="@color/black" />
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:layout_marginTop="8dp"
+                android:layout_marginStart="16dp"
+                android:id="@+id/txt_shop_for"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/searchview_container"
+                android:text="Shop For" />
+
+            <TextView
+                android:id="@+id/txt_show_all"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/searchview_container"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:textColor="@color/purple_700"
+                android:text="Show All" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/category_recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txt_shop_for"
+                android:layout_alignParentStart="true"
+                android:layout_marginTop="8dp"
+                tools:listitem="@layout/single_category_item" />
+
+        </RelativeLayout>
+    </androidx.core.widget.NestedScrollView>
+</layout>

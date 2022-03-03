@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.mvvm.easework.ui.employee.EmployeeViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <include
+            android:id="@+id/ilToolBar"
+            layout="@layout/toolbar_app" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/employe_recycler"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/ilToolBar"
+            android:layout_marginTop="@dimen/_16sdp"
+            tools:listitem="@layout/single_employe_item" />
+    </RelativeLayout>
+</layout>
